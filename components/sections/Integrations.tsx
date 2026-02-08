@@ -44,7 +44,7 @@ const integrations = [
         desc: "Standup meeting transcripts",
     },
     {
-        name: "SharePoint / S3",
+        name: "S3",
         status: "Connected",
         icon: (
             <svg viewBox="0 0 24 24" fill="none" className="w-10 h-10 text-orange-500">
