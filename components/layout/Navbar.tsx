@@ -6,12 +6,11 @@ import { usePathname, useRouter } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, ChevronRight } from "lucide-react";
 import { Button } from "@/components/ui/Button";
-import { Modal } from "@/components/ui/Modal";
+
 
 export function Navbar() {
     const [scrolled, setScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-    const [isLoginOpen, setIsLoginOpen] = useState(false);
     const pathname = usePathname();
     const router = useRouter();
 
@@ -45,7 +44,7 @@ export function Navbar() {
         { name: "Features", id: "features" },
         { name: "Integrations", id: "integrations" },
         { name: "Use Cases", id: "use-cases" },
-        { name: "Security", id: "security" },
+        { name: "Dashboards", id: "dashboards" },
         { name: "FAQ", id: "faq" },
     ];
 
@@ -82,10 +81,12 @@ export function Navbar() {
                     </nav>
 
                     <div className="hidden md:flex items-center gap-4">
-                        <Button variant="ghost" size="sm" onClick={() => setIsLoginOpen(true)}>
-                            Log In
-                        </Button>
-                        <Link href="/get-started">
+                        <Link href="https://google.com">
+                            <Button variant="ghost" size="sm">
+                                Log In
+                            </Button>
+                        </Link>
+                        <Link href="https://google.com">
                             <Button variant="primary" size="sm" icon={<ChevronRight strokeWidth={2} size={16} />}>
                                 Get Started
                             </Button>
@@ -122,10 +123,12 @@ export function Navbar() {
                                 </button>
                             ))}
                             <div className="h-px bg-white/10 my-2" />
-                            <Button variant="ghost" className="justify-start text-lg" onClick={() => setIsLoginOpen(true)}>
-                                Log In
-                            </Button>
-                            <Link href="/get-started" onClick={() => setMobileMenuOpen(false)}>
+                            <Link href="https://google.com">
+                                <Button variant="ghost" className="justify-start text-lg">
+                                    Log In
+                                </Button>
+                            </Link>
+                            <Link href="https://google.com" onClick={() => setMobileMenuOpen(false)}>
                                 <Button variant="primary" className="w-full justify-center text-lg">
                                     Get Started
                                 </Button>
@@ -135,58 +138,8 @@ export function Navbar() {
                 )}
             </AnimatePresence>
 
-            <LoginModal isOpen={isLoginOpen} onClose={() => setIsLoginOpen(false)} />
         </>
     );
 }
 
-function LoginModal({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) {
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        console.log("Login attempt:", { email });
-        // Simulate API call
-        setTimeout(() => onClose(), 1000);
-    };
-
-    return (
-        <Modal isOpen={isOpen} onClose={onClose} title="Welcome back">
-            <form onSubmit={handleSubmit} className="space-y-4">
-                <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-1">Email</label>
-                    <input
-                        type="email"
-                        required
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                        placeholder="you@company.com"
-                    />
-                </div>
-                <div>
-                    <label className="block text-sm font-medium text-slate-300 mb-1">Password</label>
-                    <input
-                        type="password"
-                        required
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2 text-white outline-none focus:border-cyan-500 focus:ring-1 focus:ring-cyan-500 transition-all"
-                        placeholder="••••••••"
-                    />
-                </div>
-                <div className="flex items-center justify-between text-sm">
-                    <label className="flex items-center gap-2 cursor-pointer text-slate-400 hover:text-white">
-                        <input type="checkbox" className="rounded border-white/20 bg-white/5 text-cyan-500 focus:ring-cyan-500" />
-                        <span>Remember me</span>
-                    </label>
-                    <a href="#" className="text-cyan-400 hover:text-cyan-300 transition-colors">Forgot password?</a>
-                </div>
-                <Button type="submit" className="w-full justify-center mt-2">
-                    Sign In
-                </Button>
-            </form>
-        </Modal>
-    );
-}

@@ -52,7 +52,7 @@ export function Hero() {
                             <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-cyan-400 opacity-75"></span>
                             <span className="relative inline-flex rounded-full h-2 w-2 bg-cyan-500"></span>
                         </span>
-                        New: Unified search across Jira + GitHub + SharePoint + S3
+                        New: Unified search across Jira + GitHub + Teams + S3
                     </motion.div>
 
                     <motion.h1
@@ -80,12 +80,12 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-4 mb-12"
                     >
-                        <Link href="/get-started">
+                        <Link href="https://google.com">
                             <Button size="lg" icon={<ArrowRight size={18} />}>
                                 Get Started
                             </Button>
                         </Link>
-                        <Link href="/login">
+                        <Link href="https://google.com">
                             <Button variant="outline" size="lg" icon={<PlayCircle size={18} />}>
                                 Live Demo
                             </Button>
@@ -98,7 +98,7 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.4 }}
                         className="flex flex-wrap gap-6 text-sm text-slate-500"
                     >
-                        {["SOC2-ready practices", "Role-based access", "Audit-friendly"].map((text) => (
+                        {["Role-based access", "Audit-friendly"].map((text) => (
                             <div key={text} className="flex items-center gap-2">
                                 <CheckCircle2 size={16} className="text-cyan-500" />
                                 <span>{text}</span>
@@ -156,7 +156,7 @@ export function Hero() {
                             style={{ opacity: cardsOpacity, y: cardsY }}
                             className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0B1121] border border-cyan-500/30 p-4 rounded-xl shadow-2xl shadow-cyan-500/20 w-48 text-center"
                         >
-                            <div className="font-semibold text-white mb-1">Knowledge Hub</div>
+                            <div className="font-semibold text-white mb-1">Knowledge Transfer Hub</div>
                             <div className="text-xs text-slate-400">Syncing 4 sources...</div>
                         </motion.div>
 
@@ -165,7 +165,7 @@ export function Hero() {
                             { top: "100px", left: "300px", label: "Jira" },
                             { top: "300px", right: "100px", label: "GitHub" },
                             { bottom: "100px", left: "300px", label: "S3" },
-                            { top: "300px", left: "100px", label: "SharePoint" }
+                            { top: "300px", left: "100px", label: "Teams" }
                         ].map((pos, i) => (
                             <motion.div
                                 key={pos.label}

@@ -5,7 +5,7 @@ import { HowItWorks } from "@/components/sections/HowItWorks";
 import { Integrations } from "@/components/sections/Integrations";
 import { Features } from "@/components/sections/Features";
 import { UseCases } from "@/components/sections/UseCases";
-import { Security } from "@/components/sections/Security";
+import { Dashboards } from "@/components/sections/Dashboards";
 import { FAQ } from "@/components/sections/FAQ";
 
 export default function Home() {
@@ -17,7 +17,7 @@ export default function Home() {
       <Integrations />
       <Features />
       <UseCases />
-      <Security />
+      <Dashboards />
       <FAQ />
 
       {/* Footer CTA */}
@@ -27,7 +27,7 @@ export default function Home() {
             Launch your next onboarding in <br /><span className="text-cyan-500">days, not weeks.</span>
           </h2>
           <div className="flex justify-center gap-4">
-            <a href="/get-started" className="bg-cyan-500 text-black px-8 py-3 rounded-lg font-bold hover:bg-cyan-400 transition-colors">
+            <a href="https://google.com" className="bg-cyan-500 text-black px-8 py-3 rounded-lg font-bold hover:bg-cyan-400 transition-colors">
               Get Started
             </a>
           </div>
