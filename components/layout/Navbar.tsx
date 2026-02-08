@@ -81,12 +81,12 @@ export function Navbar() {
                     </nav>
 
                     <div className="hidden md:flex items-center gap-4">
-                        <Link href="https://google.com">
+                        <Link href="http://98.81.206.47:3000">
                             <Button variant="ghost" size="sm">
                                 Log In
                             </Button>
                         </Link>
-                        <Link href="https://google.com">
+                        <Link href="http://98.81.206.47:3000">
                             <Button variant="primary" size="sm" icon={<ChevronRight strokeWidth={2} size={16} />}>
                                 Get Started
                             </Button>
@@ -123,12 +123,12 @@ export function Navbar() {
                                 </button>
                             ))}
                             <div className="h-px bg-white/10 my-2" />
-                            <Link href="https://google.com">
+                            <Link href="http://98.81.206.47:3000">
                                 <Button variant="ghost" className="justify-start text-lg">
                                     Log In
                                 </Button>
                             </Link>
-                            <Link href="https://google.com" onClick={() => setMobileMenuOpen(false)}>
+                            <Link href="http://98.81.206.47:3000" onClick={() => setMobileMenuOpen(false)}>
                                 <Button variant="primary" className="w-full justify-center text-lg">
                                     Get Started
                                 </Button>

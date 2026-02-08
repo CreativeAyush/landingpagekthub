@@ -11,21 +11,21 @@ const dashboards = [
         description: "Strategic Portfolio Management for high-level oversight and decision making.",
         icon: LayoutDashboard,
         color: "text-blue-400",
-        href: "https://google.com"
+        href: "http://98.81.206.47:3000"
     },
     {
         title: "PM",
         description: "Project Management view for tracking progress, timelines, and deliverables.",
         icon: Users,
         color: "text-purple-400",
-        href: "https://google.com"
+        href: "http://98.81.206.47:3000"
     },
     {
         title: "VIEWER",
         description: "Access for Developers, QAs, and other team members to view relevant updates and reports.",
         icon: Eye,
         color: "text-cyan-400",
-        href: "https://google.com"
+        href: "http://98.81.206.47:3000"
     }
 ];
 

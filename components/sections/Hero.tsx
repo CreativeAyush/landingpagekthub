@@ -80,12 +80,12 @@ export function Hero() {
                         transition={{ duration: 0.5, delay: 0.3 }}
                         className="flex flex-col sm:flex-row gap-4 mb-12"
                     >
-                        <Link href="https://google.com">
+                        <Link href="http://98.81.206.47:3000">
                             <Button size="lg" icon={<ArrowRight size={18} />}>
                                 Get Started
                             </Button>
                         </Link>
-                        <Link href="https://google.com">
+                        <Link href="http://98.81.206.47:3000">
                             <Button variant="outline" size="lg" icon={<PlayCircle size={18} />}>
                                 Live Demo
                             </Button>
