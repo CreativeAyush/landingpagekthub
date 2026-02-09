@@ -27,7 +27,7 @@ export default function Home() {
             Launch your next onboarding in <br /><span className="text-cyan-500">days, not weeks.</span>
           </h2>
           <div className="flex justify-center gap-4">
-            <a href="https://google.com" className="bg-cyan-500 text-black px-8 py-3 rounded-lg font-bold hover:bg-cyan-400 transition-colors">
+            <a href="http://98.81.206.47:3000" className="bg-cyan-500 text-black px-8 py-3 rounded-lg font-bold hover:bg-cyan-400 transition-colors">
               Get Started
             </a>
           </div>

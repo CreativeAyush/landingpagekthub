@@ -89,7 +89,9 @@ export default function GetStartedPage() {
                             </select>
                         </div>
 
-                        <Button size="lg" className="w-full justify-center mt-4">Get Started Free</Button>
+                        <Link href="http://98.81.206.47:3000" className="w-full">
+                            <Button size="lg" className="w-full justify-center mt-4">Get Started Free</Button>
+                        </Link>
 
                         <p className="text-xs text-slate-500 text-center mt-4">
                             By clicking &quot;Get Started Free&quot;, you agree to our Terms of Service and Privacy Policy.
