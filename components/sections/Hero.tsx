@@ -85,7 +85,7 @@ export function Hero() {
                                 Get Started
                             </Button>
                         </Link>
-                        <Link href="http://98.81.206.47:3000">
+                        <Link href="https://ai-powered-enterprise-kn-6i3111c.gamma.site/">
                             <Button variant="outline" size="lg" icon={<PlayCircle size={18} />}>
                                 Live Demo
                             </Button>
