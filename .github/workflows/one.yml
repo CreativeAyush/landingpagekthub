@@ -1,0 +1,50 @@
+name: fabric-cicd
+
+on:
+  push:
+    branches:
+      - qa-test
+      - uat
+
+permissions:
+  contents: read
+  id-token: write
+
+env:
+  ARTIFACT_NAME: fabric_src
+  CLEAN_ORPHANS: "true"
+  REPOSITORY_DIRECTORY: "."
+
+jobs:
+  # =========================================================
+  # BUILD
+  # =========================================================
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Prepare venv + sanity checks
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          python3 --version
+          python3 -m venv .venv
+          . .venv/bin/activate
+
+          python -m pip install --upgrade pip
+          python -m pip install --upgrade fabric-cicd
+
+          test -f parameter.yml || {
+            echo "[error] parameter.yml not found"
+            exit 2
+          }
+
+      - name: Upload artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: ${{ env.ARTIFACT_NAME }}
+          path: .
+          include-hidden-files: true
