@@ -6,14 +6,35 @@ on:
       - qa-test
       - uat
 
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: "Target environment"
+        required: true
+        type: choice
+        options:
+          - QA
+          - UAT
+        default: QA
+
+      clean_orphans:
+        description: "Run orphan cleanup"
+        required: true
+        type: boolean
+        default: false
+
+      repository_directory:
+        description: "Repository directory"
+        required: true
+        type: string
+        default: "."
+
 permissions:
   contents: read
   id-token: write
 
 env:
   ARTIFACT_NAME: fabric_src
-  CLEAN_ORPHANS: "true"
-  REPOSITORY_DIRECTORY: "."
 
 jobs:
   # =========================================================
@@ -23,7 +44,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v4
+      - name: Checkout repository
+        uses: actions/checkout@v4
 
       - name: Prepare venv + sanity checks
         shell: bash
@@ -48,3 +70,7 @@ jobs:
           name: ${{ env.ARTIFACT_NAME }}
           path: .
           include-hidden-files: true
+
+  # =========================================================
+  # DEPLOY
+  # =========================================================
